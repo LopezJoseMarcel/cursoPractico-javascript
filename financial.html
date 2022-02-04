@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;300;500&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Financial</title>
+    <style>
+      :root { /*Aqui estan las variables de CSS*/
+         --very-light-pink: #C7C7C7;
+         --text-input-field: #F7F7F7;
+         --hospital-green: #6de27d;  
+         --white: #FFFFFF;   
+         --black: #000000;  
+         --sm: 12px; /*Medida Pequeña*/
+         --md: 16px;
+         --lg: 24px; /*medida grande */      
+         }
+
+     body {
+            margin: 8px;
+            font-family: 'Fira Sans', sans-serif;
+        }
+
+      .general-container {
+        width: 100%; /*Va atener el 100%de la pantalla */
+            height: 100vh;/*Va a tener el maximo tamaño que se este viendo*/
+            display: grid;
+            place-items: center;
+      }
+         
+        .financial-container {
+            width: 700px;
+            height: 772px;
+          background: var(--hospital-green);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-radius: 5px;
+        }
+
+        .stock-container {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 28px;
+        }
+
+        .bonds-container {
+            display: grid;
+            grid-template-columns: auto;
+            gap: 28px;
+        }
+
+        .crypto-container {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 28px;
+        }
+
+        .print-container{
+            display: flex;
+            align-items: center;   
+        }
+
+        .title {
+            color: white;
+            font-size: var(--lg);
+        }
+
+        .sub-title p:nth-child(1) {
+            font-family: Fira Sans;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 13px;
+            text-align: center;
+        }
+        
+
+        .sub-title p:nth-child(2) {
+            color: white;
+            font-size: var(--sm);
+        }
+
+        .parrafo {
+            font-family: Fira Sans;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 12px;
+            text-align: center;
+        }
+         p{
+             text-align: center;
+         }
+        img{
+            width: 20px;
+            height: 20px;
+        }
+        .container-input {
+         display: flex;
+         align-items: center;
+         gap: 4px;
+        }
+        .print-container p {
+            text-align: left;
+            
+        }
+        #img{
+            margin: 12px;
+            background-color: white;
+            border: none;
+            border-radius: 8px;
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 40px;
+            width: 100%;
+           
+        }
+        
+        .print-container {
+            position: absolute;
+            top: 660px;
+            display: flex;
+            align-items: center;
+            margin-right: 84px;
+            gap: 24px;
+        }
+
+        input{
+            background-color:white;
+            border-radius:6px;
+            border: none;
+            height: 18px;
+        }
+        .label-in{
+            margin: 0 8px;
+        }
+      
+        .container-label {
+         display: flex;
+         flex-direction: column;
+         gap: 16px;
+         color: yellow;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="general-container">
+        <script src="/financial.js"></script>
+       <div class="financial-container">
+           <div class="title">
+            <p>Insert the money into the financial instrument</p>
+   
+        </div>
+           
+        <div class="year-container">
+            <form action="/">
+             <label for="year-input" class="label-in">Enter the number of years of the investment:
+             </label>
+             <input type="number" id="year-input"
+                 placeholder="years"
+                 class="input input-password" 
+                 >
+            </form>
+          </div>
+        
+        <div class="sub-title">
+            <p>Index ETF</p>
+            <p>risk level: medium</p>
+         </div>
+
+        
+           <div class="stock-container">
+              
+              <div class="stock1">
+                
+               <p>SP-500</p>
+               <p class="parrafo">% return per year: 8.26%</p>
+               <div class="container-input">
+               <img src="/Asset/moneda.svg" alt="coin">
+              <input type="number" id="input-SP500">
+               </div>
+               
+              </div>     
+
+              <div class="stock2">
+                <p>NASDAQ 100</p>
+                <p class="parrafo">% return per year: 11.5%</p>
+                <div class="container-input">
+                  <img src="/Asset/moneda.svg" alt="coin">
+               <input type="number" id="input-NASDAQ">  
+                </div>
+                
+               </div> 
+
+               <div class="stock3">
+                <p>Dow Jones</p>
+                <p class="parrafo">% return per year: 15.0%</p>
+                <div class="container-input" >
+                    <img src="/Asset/moneda.svg" alt="coin">
+                    <input type="number" id="input-DOW">
+                </div>
+                
+               </div> 
+           </div>
+
+           <!--bonds-->
+           <div class="sub-title">
+            <p>Bonds</p>
+            <p>risk level: low</p>
+           </div>
+           <div class="bonds-container">
+           
+                <div class="bond1">
+                    <p>U.S savings bonds</p>
+                    <p class="parrafo">% return per year: 2.5%</p>
+                    <div class="container-input" >
+                     <img src="/Asset/moneda.svg" alt="coin">
+                   <input type="number" id="input-bond">   
+                    </div>
+                    
+                </div>
+           </div>
+          <!--Cryptocurrencies-->
+          <div class="sub-title">
+            <p>Cryptocurrencies</p>
+            <p>risk level: high</p>
+          </div>
+          <div class="crypto-container">
+    
+           <div class="bitcoin">
+            <p>Bitcoin</p>
+            <p class="parrafo">% return per year: 20%</p>
+            <div class="container-input" >
+             <img src="/Asset/moneda.svg" alt="coin">
+           <input type="number" id="input-Bit">   
+            </div>
+            
+           </div>     
+
+           <div class="ethereum">
+             <p>Ethereum</p>
+             <p class="parrafo">% return per year: 18.5%</p>
+             <div class="container-input" >
+                <img src="/Asset/moneda.svg" alt="coin">
+            <input type="number" id="input-ETH">  
+             </div>
+            
+            </div> 
+
+            <div class="tether">
+             <p>Tether</p>
+             <p class="parrafo">% return per year: 16.0%</p>
+             <div class="container-input" >
+               <img src="/Asset/moneda.svg" alt="coin">
+            <input type="number" id="input-TET">  
+             </div>
+             
+            </div> 
+        </div>
+           
+        <div class="print-container">
+           
+            
+            <div >
+                <button id="img" class="primary-button" onclick="resultado()">
+                    Calcular</button>
+                
+            </div>
+            <div class="container-parrafo">
+                <p id="tb">Total benefits: </p>
+                <p id="rp">Risk profile: </p>
+                <p id="t">Total: </p>
+            </div>
+            <div class="container-label">
+                
+
+                <label  id="total-benefit-label" for="tb"></label>
+                <label id="risk-label" for="rb"></label>
+                <label id="total-label" for="t"></label>
+            </div>
+        </div>
+                  
+       </div>
+    </div>
+</body>
+</html>
